@@ -1,5 +1,4 @@
-
-  const logoSets = document.querySelectorAll(".logo-set");
+const logoSets = document.querySelectorAll(".logo-set");
   const dots = document.querySelectorAll(".dot");
   const heading = document.getElementById("solution-heading");
 

@@ -97,7 +97,11 @@ text-decoration: none;
   justify-content: center;
   align-items: center;
 }
-
+.container {
+  padding-bottom: 113px !important;
+  padding-left: 0px !important;
+  padding-top: 104px !important;
+} 
 
 
 /* Content */
@@ -150,6 +154,7 @@ color: #FFFFFF;
   border: none;
   border-radius: 5px;
  letter-spacing: 0;
+ margin-top: 44px;
   
 }
 
@@ -181,7 +186,7 @@ color: #FFFFFF;
 /*#################################################################################################   our solution seaction     */
 .our-solution-section {
   background-color: #040226;
-  padding: 80px 16px;
+  padding: 79px 0 109px 0px;
 }
 
 .solution-inner {
@@ -197,7 +202,7 @@ color: #FFFFFF;
   line-height: 100%;
   color: #ffffff;
   max-width: 634px;
-  margin: 0 auto 60px;
+  margin: 0 auto 52px;
 }
 
 .logos-wrapper {
@@ -209,7 +214,7 @@ color: #FFFFFF;
 .logo-set {
   display: none;
   justify-content: center;
-  gap: 60px;
+  gap: 125px;
   flex-wrap: wrap;
 }
 
@@ -219,7 +224,7 @@ color: #FFFFFF;
 }
 
 .logo-set img {
-  max-height: 60px;
+ 
   object-fit: contain;
 }
 
@@ -277,7 +282,7 @@ color: #FFFFFF;
 .event-content {
   flex: 1 1 50%;
   max-width: 50%;
-  padding-left: 89px;
+  padding-left: 74px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -299,7 +304,7 @@ color: #FFFFFF;
   font-size: 64px;
   line-height: 70px;
   color: #A3DEFF;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
   margin: 0;
 }
 
@@ -308,7 +313,7 @@ color: #FFFFFF;
   font-weight: 700;
   font-size: 96px;
   line-height: 45px;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
   color: #ffffff;
   margin: 0;
 }
@@ -546,7 +551,7 @@ color: #FFFFFF;
   text-align: center;
   margin-top: 30px;
   line-height: 37px;
-  letter-spacing: 2px;
+  letter-spacing: 0.05em;
   max-width: 554px;
   margin-inline: auto;
   margin-top: 58px;
@@ -629,7 +634,7 @@ color: #FFFFFF;
  top: 54px;
     left: 46%;
     /* width: 76px; */
-    transform: translateX(-50%) rotate(295.84deg);
+    transform:translateX(-50%) rotate(280.84deg);
 }
 
 .wifi-top-right {
@@ -686,14 +691,14 @@ color: #FFFFFF;
 .hi-section-left {
   position: absolute;
   color: #ffffff;
- margin-left: 110px;
+ margin-left: 101px;
 }
 
 .hi-section-heading {
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .hi-section-subtext {
@@ -702,7 +707,7 @@ color: #FFFFFF;
   font-weight: 500;
   line-height: 45px;
   letter-spacing: 0.05em;
-  margin-bottom: 30px;
+  margin-bottom: 29px;
   max-width: 582px;
 }
 
@@ -712,7 +717,7 @@ color: #FFFFFF;
   font-weight: 700;
   line-height: 67px;
   letter-spacing: 0.05em;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
   max-width: 604px;
 }
 
@@ -985,7 +990,7 @@ color: #FFFFFF;
 }
 
 .our-technology-heading {
-  margin: 0 auto 100px;
+  margin: 0 auto 138px;
   text-align: center;
   font-size: 96px;
   font-weight: 700;
@@ -1022,8 +1027,8 @@ color: #FFFFFF;
 }
 
 .our-technology-icon {
-  width: 48px;
-  height: 48px; /* Force all icons to be same size */
+ /*  width: 48px;
+  height: 48px;  *//* Force all icons to be same size */
   margin-bottom: 30px;
 }
 
@@ -1116,7 +1121,7 @@ color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px;
+  gap: 22px;
 }
 
 .portal-subtext {
@@ -1151,7 +1156,7 @@ color: #FFFFFF;
   border-radius: 5px;
   cursor: pointer;
   width: fit-content;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .portal-bottom-text {
@@ -1212,7 +1217,7 @@ color: #FFFFFF;
 }
 
 .bring-card {
-  max-width: 382px;
+  max-width: 342px;
   height: auto;
   text-align: left;
 }
@@ -1248,6 +1253,7 @@ color: #FFFFFF;
 
 .bring-bottom-card {
   max-width: 458px;
+
   height: auto;
   text-align: left;
 }
@@ -1265,7 +1271,7 @@ color: #FFFFFF;
   font-size: 22px;
   font-weight: 500;
   line-height: 46px;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
   color: #FFFFFF;
 }
 
@@ -1338,6 +1344,7 @@ color: #FFFFFF;
   font-weight: 700;
   margin-bottom: 30px;
   line-height: 1.4;
+  max-width: 573px;
 }
 
 .keep-section-heading {
@@ -1422,9 +1429,9 @@ color: #FFFFFF;
 .footer-section {
   background-color: #000; 
   color: #fff;
-  padding: 40px 0px 0 0px;
+  padding: 66px 0px 0 0px;
   font-family: 'Poppins', sans-serif;
-  margin-top: 123px;
+  margin-top: 80px;
 }
 
 .subscribe-wrapper {
@@ -1460,7 +1467,7 @@ color: #FFFFFF;
   align-items: center;
   border: 1px solid #fff;
   border-radius: 10px;
-  padding: 29px 432px 31px 26px;
+  padding: 29px 432px 36px 26px;
   background: transparent;
   min-width: 0;
 }
