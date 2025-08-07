@@ -1573,4 +1573,13 @@ padding:  28px 78px 28.9px 106px;
     flex-direction: column;
     text-align: center;
   }
+  .keep-section-image{
+    width: 100%;
+  }
+  .footer-section{
+    margin: 0;
+  }
+  .keep-section{
+    padding: 0;
+  }
 }
