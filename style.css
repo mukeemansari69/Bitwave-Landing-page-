@@ -181,7 +181,16 @@ color: #FFFFFF;
     padding: 0.6rem 1.2rem;
   }
 }
+/* ######################## cursor blinking css  */
+#typewriter-text::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 /*#################################################################################################   our solution seaction     */
 .our-solution-section {
@@ -336,6 +345,34 @@ color: #FFFFFF;
 .explore-btn2:hover {
   background-color: #85d1ff;
 }
+
+
+.event-image,
+.event-content {
+  opacity: 0;
+  transform: translateX(100px); /* default right */
+  transition: all 1s ease-out;
+}
+
+/* Slide-in for image */
+.event-image.animate {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+/* Slide-in for content */
+.event-content.animate {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+
+/* Image from left */
+.event-image {
+  transform: translateX(-100px);
+}
+
 
 /* ############################################################################################  revolutioning seaction  */
 
@@ -775,6 +812,33 @@ color: #FFFFFF;
   }
 }
 
+/* Initial state */
+.hi-section-left,
+.hi-section-right {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.hi-section-left {
+  transform: translateX(-100px);
+}
+
+.hi-section-right {
+  transform: translateX(100px);
+}
+
+/* Animate class when in viewport */
+.hi-section-left.animate,
+.hi-section-right.animate {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 10;
+}
+.hi-section-right.animate {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 1;
+}
 
 /* ##################################################################### imagine ########################################## */
 
@@ -881,6 +945,45 @@ color: #FFFFFF;
     font-size: 16px;
   }
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Initially hidden */
+.imagine-section-left,
+.imagine-section-right {
+  opacity: 0;
+}
+
+/* Animate image from left */
+.imagine-section-left.animate {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Animate content from right */
+.imagine-section-right.animate {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
 /* ######################################################################## bitwave social media ############################# */
 .bitwavemedia-section {
   background-color: #001826;
@@ -1278,7 +1381,7 @@ color: #FFFFFF;
 .bring-button-wrapper {
   text-align: center;
   margin-top: 90px;
-  margin-bottom: 137px;
+  
 }
 
 .bring-button {
@@ -1423,6 +1526,53 @@ color: #FFFFFF;
     font-size: 16px;
     line-height: 28px;
   }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Initially hidden */
+.keep-section-left,
+.keep-section-right {
+  opacity: 0;
+}
+
+/* Animate text from left */
+.keep-section-left.animate {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Animate image from right */
+.keep-section-right.animate {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+/* Animation overflow control css  */
+
+.event-section,
+.hi-section,
+.imagine-section,
+.keep-section {
+  overflow: hidden;
 }
 
 /* ###############################################################################################  fotter seaction ############################################################### */
@@ -1588,5 +1738,508 @@ padding:  28px 78px 28.9px 106px;
   }
   .keep-section{
     padding: 0;
+  }
+}
+
+/* ===================== Consistent Button Hover Effect (NEW, as per user request) =====================
+   All main buttons now share the same hover effect as the event section button (.explore-btn2)
+   This does NOT modify any existing code, only adds new hover rules for consistency.
+*/
+.explore-btn:hover,
+.demo-button:hover,
+.get-button:hover,
+.hi-section-button:hover,
+.imagine-section-button:hover,
+.bitwavemedia-button:hover,
+.portal-button:hover,
+.bring-button:hover,
+.keep-section-button:hover,
+.subscribe-button:hover {
+  background-color: #85d1ff !important;
+  color: #000 !important;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+/* ===================== Responsive Modifications for <= 780px =====================
+   All code below is new and does NOT modify any existing code. 
+   These rules make the site responsive for all screens, especially <= 780px.
+   Font sizes, margins, paddings, and image sizes are adjusted for mobile/tablet.
+*/
+
+@media (max-width: 780px) {
+  /* General font size reduction */
+  body, html {
+    font-size: 14px;
+  }
+  .email-subscribe-banner{
+    font-size: 16px;
+  }
+  /* Banner Section */
+  .banner-section {
+    background-position: center top;
+    padding: 0 10px;
+  }
+  .top-nav {
+    padding: 18px 10px;
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-menu {
+    gap: 1.2rem;
+  }
+  .main-heading {
+    font-size: 2.2rem;
+  }
+  .main-highlight {
+    font-size: 2.8rem;
+    line-height: 2.5rem;
+  }
+  .strip-text {
+    font-size: 1.1rem;
+  }
+  .banner-content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    max-width: 100%;
+  }
+  .explore-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 20px;
+  }
+
+  /* Images: all images max-width 100% */
+  img, .banner-section img, .event-image img, .revolutionize-images img, .card-icon, .hi-section-image, .imagine-section-image, .bitwavemedia-image, .portal-image, .keep-section-image {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+ .bring-icon{
+  width: 70px;
+  height: auto !important;
+ }
+  /* Our Solution Section */
+  .our-solution-section {
+    padding: 30px 0 40px 0;
+  }
+  .solution-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .logos-wrapper {
+    gap: 20px;
+  }
+  .logo-set {
+    gap: 30px;
+  }
+  .dots {
+    margin-top: 20px;
+  }
+
+  /* Event Section */
+  .event-section {
+    margin: 20px 0 30px 0;
+  }
+  .event-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .event-content {
+    padding-left: 0;
+    gap: 15px;
+    max-width: 100%;
+  }
+  .event-heading {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+  .event-title {
+    font-size: 2.5rem;
+    line-height: 2rem;
+  }
+  .event-tagline {
+    font-size: 1rem;
+  }
+  .explore-btn2 {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 20px;
+    height: 40px;
+  }
+
+  /* Revolutionize Section */
+  .revolutionize {
+    padding-top: 30px;
+  }
+  .revolutionize-heading {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    max-width: 100%;
+  }
+  .revolutionize-subtext {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin: 15px 0 20px 0;
+    max-width: 100%;
+  }
+  .demo-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+  .revolutionize-images {
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .left-img, .right-img {
+    width: 120px;
+  }
+
+  /* Cards Section */
+  .cards {
+    flex-direction: column;
+    gap: 18px;
+    margin: 10px 50px 10px 50px;
+  }
+  .card {
+    padding: 20px 10px 30px 10px;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  .card-desc {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    max-width: 100%;
+  }
+
+  /* Get Ready Section */
+  .get-section {
+    padding: 10px 5px 0 5px;
+  }
+  .get-section-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  .get-left, .get-right {
+    padding: 10px;
+  }
+  .get-right {
+    margin-top: 30px;
+  }
+  .get-title {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  .get-subtitle, .get-choose {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  .get-suddenly, .get-not-anymore {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    line-height: 1.2rem;
+  }
+  .get-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .get-character {
+    margin-left: 0;
+    max-width: 120px !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Hi Section */
+  .hi-section {
+    padding: 30px 0 30px;
+  }
+  .hi-section-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .hi-section-left {
+    margin-left: 0;
+    position: static;
+    padding: 0;
+  }
+  .hi-section-heading {
+    font-size: 1.3rem;
+  }
+  .hi-section-subtext {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    max-width: 100%;
+  }
+  .hi-section-highlight {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    max-width: 100%;
+  }
+  .hi-section-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    max-width: 100%;
+  }
+
+  /* Imagine Section */
+  .imagine-section {
+    margin-bottom: 30px;
+  }
+  .imagine-section-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .imagine-section-right {
+    position: static;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+  .imagine-section-heading {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .imagine-section-highlight {
+    font-size: 1.7rem;
+    line-height: 1.2rem;
+    margin-bottom: 20px;
+  }
+  .imagine-section-topline {
+    font-size: 1rem;
+  }
+  .imagine-section-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    max-width: 100%;
+  }
+
+  /* Bitwave Media Section */
+  .bitwavemedia-section {
+    padding: 30px 0 30px 0;
+  }
+  .bitwavemedia-heading {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    width: 100%;
+  }
+  .bitwavemedia-description {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin: 20px auto 30px;
+  }
+  .bitwavemedia-imageblock {
+    text-align: center;
+  }
+  .bitwavemedia-image {
+    margin-bottom: 20px;
+  }
+  .bitwavemedia-footnote {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .bitwavemedia-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  /* Our Technology Section */
+  .our-technology-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .our-technology-heading {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    margin-bottom: 30px;
+  }
+  .our-technology-grid {
+    gap: 20px 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .our-technology-card {
+    
+    height: auto;
+    margin: 0 auto;
+  }
+  .our-technology-card-title {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    height: auto;
+  }
+  .our-technology-card-desc {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    height: auto;
+  }
+
+  /* Portal Section */
+  .portal-section {
+    padding: 30px 0 30px 0;
+  }
+  .portal-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .portal-left, .portal-right {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .portal-subtext {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  .portal-heading {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .portal-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    margin-top: 10px;
+  }
+  .portal-bottom-text {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  /* Bring Section */
+  .bring-section {
+    padding-top: 30px;
+  }
+  .bring-heading {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .bring-top-cards, .bring-bottom-row {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .bring-card, .bring-bottom-card {
+    max-width: 100%;
+    text-align: center;
+  }
+  .bring-card-title, .bring-bottom-title {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .bring-card-text, .bring-bottom-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .bring-button-wrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .bring-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Keep Section */
+  .keep-section {
+    padding: 20px 0 20px;
+  }
+  .keep-section-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .keep-section-left {
+    margin-left: 0;
+    padding: 0;
+  }
+  .keep-section-heading {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .keep-section-subtext, .keep-section-top-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+  .keep-section-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    max-width: 100%;
+  }
+
+  /* Footer Section */
+  .footer-section {
+    margin: 0;
+    padding: 20px 0 0 0;
+  }
+  .subscribe-wrapper {
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0 5px;
+  }
+  .subscribe-heading {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  .subscribe-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .email-input-wrapper {
+    padding: 10px 10px 10px 10px;
+    border-radius: 6px;
+  }
+  .email-input {
+    font-size: 1rem;
+  }
+  .subscribe-button {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 6px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .footer-logo {
+    width: 30px;
+    height: 40px;
+  }
+  .footer-text {
+    font-size: 1rem;
+  }
+  .footer-right {
+    gap: 8px;
+  }
+  .social-icon {
+    width: 22px;
+    height: 22px;
   }
 }
