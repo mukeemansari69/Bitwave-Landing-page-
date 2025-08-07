@@ -1786,8 +1786,14 @@ padding:  28px 78px 28.9px 106px;
     padding: 18px 10px;
   }
   .nav-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+  }
+  .banner-section img{
+    width: 30px !important;
+  }
+  .img {
+    display: none !important;
   }
   .nav-menu {
     gap: 1.2rem;
@@ -1806,6 +1812,7 @@ padding:  28px 78px 28.9px 106px;
     padding-top: 40px;
     padding-bottom: 60px;
     max-width: 100%;
+    z-index: 1;
   }
   .explore-btn {
     font-size: 1rem;
@@ -2241,5 +2248,44 @@ padding:  28px 78px 28.9px 106px;
   .social-icon {
     width: 22px;
     height: 22px;
+  }
+}
+
+
+/* ################################################################################################   css ############################ */
+
+/* Hide desktop menu, show toggle on mobile */
+@media (max-width: 769px) {
+  .menu-toggle {
+    background: none;
+    border: none;
+    z-index: 20;
+  }
+
+  .menu-toggle img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #191919;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 16px;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobile-menu a {
+    color: #fff;
+    margin: 8px 0;
+    text-decoration: none;
+    font-weight: 500;
   }
 }

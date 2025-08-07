@@ -22,26 +22,44 @@
 <section class="banner-section">
   <!-- Top Navigation -->
   <nav class="top-nav">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <img src="assets/logo.svg" alt="Logo">
-    </div>
-    <div class="nav-right">
-      <ul class="nav-menu">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Notifications</a></li>
-        <li><a href="#">Specifications</a></li>
-        <li><a href="#">Install</a></li>
-        <li><a href="#">Get In Touch</a></li>
-      </ul>
-      <div class="search-icon">
-        <img src="assets/Search-icon.svg" alt="Search">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="assets/logo.svg" alt="Logo">
+      </div>
+
+      <div class="nav-right">
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Notifications</a></li>
+          <li><a href="#">Specifications</a></li>
+          <li><a href="#">Install</a></li>
+          <li><a href="#">Get In Touch</a></li>
+        </ul>
+
+        <!-- Search Icon -->
+        <div class="search-icon">
+          <img src="assets/Search-icon.svg" alt="Search">
+        </div>
+
+        <!-- Toggle Button (Hamburger) for Mobile -->
+        <button class="menu-toggle d-block d-md-none" id="menuToggle">
+          <img src="assets/logo-1.svg" width="28" alt="Menu Icon">
+        </button>
       </div>
     </div>
-  </div>
-</nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu d-none flex-column text-center" id="mobileMenu">
+      <a href="#">About Us</a>
+      <a href="#">Features</a>
+      <a href="#">Notifications</a>
+      <a href="#">Specifications</a>
+      <a href="#">Install</a>
+      <a href="#">Get In Touch</a>
+    </div>
+  </nav>
 
   <!-- Content -->
   <div class="container banner-content">
@@ -49,9 +67,12 @@
     <h1 class="main-heading">We Live in an</h1>
     <h2 class="main-highlight"><span id="typewriter-text"></span></h2>
 
-    <a href="#" class="explore-btn-link"><button class="explore-btn">Let’s Explore</button></a>
+    <a href="#" class="explore-btn-link">
+      <button class="explore-btn">Let’s Explore</button>
+    </a>
   </div>
 </section>
+
 
 <!-- ###############################################################################################            our solution seaction    -->
 
@@ -538,6 +559,15 @@
   </div>
 </footer>
 
+<!-- ✅ JavaScript Toggle Logic -->
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle.addEventListener("click", function () {
+    mobileMenu.classList.toggle("d-none");
+  });
+</script>
 <script src="script.js"></script>
 </body>
 </html>
