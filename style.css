@@ -1880,7 +1880,7 @@ padding:  28px 78px 28.9px 106px;
   }
 
   /* Images: all images max-width 100% */
-  img, .banner-section img, .event-image img, .revolutionize-images img, .card-icon, .hi-section-image,  .bitwavemedia-image, .keep-section-image {
+  img, .banner-section img, .event-image img, .revolutionize-images img, .card-icon, .hi-section-image,  .bitwavemedia-image{
     max-width: 100% ;
     height: auto ;
   }
@@ -1891,6 +1891,9 @@ padding:  28px 78px 28.9px 106px;
     max-height: 440px;
    }
    .portal-image{
+    max-height: 440px;
+   }
+   .keep-section-image{
     max-height: 440px;
    }
  .bring-icon{
@@ -1929,7 +1932,7 @@ padding:  28px 78px 28.9px 106px;
   .event-container {
     flex-direction: column;
     gap: 20px;
-    padding: 0 10px;
+    padding: 0 20px;
   }
   .event-image {
     max-width: 100%;
@@ -2061,7 +2064,7 @@ padding:  28px 78px 28.9px 106px;
     flex-direction: column-reverse;
     text-align: center;
     gap: 10px;
-    padding: 0 5px;
+    padding: 0 20px;
   }
   .hi-section-left {
     margin-left: 0;
@@ -2096,7 +2099,7 @@ padding:  28px 78px 28.9px 106px;
     flex-direction: column;
     text-align: center;
     gap: 10px;
-    padding: 0 5px;
+    padding: 0 20px;
   }
   .imagine-section-right {
     position: static;
@@ -2124,7 +2127,7 @@ padding:  28px 78px 28.9px 106px;
 
   /* Bitwave Media Section */
   .bitwavemedia-section {
-    padding: 30px 0 30px 0;
+    padding: 30px 20px 30px 20px;
   }
   .bitwavemedia-heading {
     font-size: 43px;
@@ -2135,7 +2138,7 @@ padding:  28px 78px 28.9px 106px;
     font-size: 1rem;
     line-height: 1.3rem;
     margin: 20px auto 30px;
-    padding: 0 20px;
+    
   }
   .bitwavemedia-description br {
     display: none;
@@ -2170,8 +2173,7 @@ padding:  28px 78px 28.9px 106px;
   }
   .our-technology-grid {
     gap: 60px 20px;
-    margin-left: 0;
-    margin-right: 0;
+    
     grid-template-columns: repeat(2, 1fr);
   }
   .our-technology-card {
@@ -2192,12 +2194,12 @@ padding:  28px 78px 28.9px 106px;
 
   /* Portal Section */
   .portal-section {
-    padding: 30px 0 30px 0;
+    padding: 30px 20px 30px 20px;
   }
   .portal-container {
     flex-direction: column;
     gap: 10px;
-    padding: 0 5px;
+    padding: 0;
   }
   .portal-left, .portal-right {
     max-width: 100%;
@@ -2259,6 +2261,7 @@ padding:  28px 78px 28.9px 106px;
     font-size: 1rem;
     padding: 8px 16px;
     margin-bottom: 20px;
+    max-width: 365px;
   }
 
   /* Keep Section */
@@ -2266,20 +2269,21 @@ padding:  28px 78px 28.9px 106px;
     padding: 0;
   }
   .keep-section-container {
-    display: none;
+    /* display: none; */
     flex-direction: column;
     text-align: center;
     gap: 10px;
-    padding: 0 5px;
+    padding: 0 20px;
   }
   .keep-section-left {
     margin-left: 0;
     padding: 0;
+    max-width: 530px;
   }
   .keep-section-heading {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 30px;
+        line-height: 50px;
+        margin-bottom: 10px;
   }
   .keep-section-subtext, .keep-section-top-text {
     font-size: 1rem;
@@ -2290,9 +2294,12 @@ padding:  28px 78px 28.9px 106px;
   .keep-section-button {
     font-size: 1rem;
     padding: 8px 16px;
-    max-width: 100%;
+    max-width: 365px;
+    width: 100%;
   }
-
+  .keep-section-highlight{
+    font-size: 59px;
+  }
   /* Footer Section */
   .footer-section {
     margin: 0;
@@ -2475,5 +2482,9 @@ padding:  28px 78px 28.9px 106px;
       }
       .get-character{
         right: 0;
+      }
+      .keep-section-right.animate{
+        margin-top: -80px;
+        margin-bottom: -70px;
       }
 }
