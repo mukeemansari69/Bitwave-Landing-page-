@@ -19,6 +19,7 @@
 </div>
 
 <!-- #########################################################################################              banner seaction  -->
+ 
 <section class="banner-section">
   <!-- Top Navigation -->
   <nav class="top-nav">
@@ -44,7 +45,7 @@
         </div>
 
         <!-- Toggle Button (Hamburger) for Mobile -->
-        <button class="menu-toggle d-block d-md-none" id="menuToggle">
+        <button class="menu-toggle " id="menuToggle">
           <img src="assets/logo-1.svg" width="28" alt="Menu Icon">
         </button>
       </div>
@@ -75,38 +76,45 @@
 
 
 <!-- ###############################################################################################            our solution seaction    -->
+ 
+<section class="powers-section">
+  <div class="powers-container">
+    <h2 class="powers-heading">Our Solution Powers Leading Venues</h2>
 
-<section class="our-solution-section">
-  <div class="solution-inner">
-    <h2 class="solution-heading" id="solution-heading">
-      Our Solution Powers Leading Venues
-    </h2>
+    <div class="powers-logos-wrapper" id="powers-logos-wrapper">
+      <div class="powers-logo-set active">
+        <img src="assets/slide1.svg" alt="Logo 1" />
+        <img src="assets/slide2.svg" alt="Logo 2" />
+        <img src="assets/slide3.svg" alt="Logo 3" />
+        <img src="assets/slide4.svg" alt="Logo 4" />
+      </div>
 
-    <div class="logos-wrapper" id="logos-wrapper">
-      <div class="logo-set active">
-        <img src="assets\slide3.svg" alt="Cambium Networks" />
-        <img src="assets\slide4.svg" alt="ISM Raceway" />
-        <img src="assets\slide2.svg" alt="Daytona Speedway" />
-        <img src="assets\slide1.svg" alt="American Tower" />
+      <div class="powers-logo-set">
+        <img src="assets/slide1.svg" alt="Logo 5" />
+        <img src="assets/slide2.svg" alt="Logo 6" />
+        <img src="assets/slide3.svg" alt="Logo 7" />
+        <img src="assets/slide4.svg" alt="Logo 8" />
       </div>
-      <div class="logo-set">
-        <img src="assets\slide3.svg" alt="Logo 1" />
-        <img src="assets\slide4.svg" alt="Logo 2" />
-        <img src="assets\slide2.svg" alt="Logo 3" />
-        <img src="assets\slide1.svg" alt="Logo 4" />
+
+      <div class="powers-logo-set">
+        <img src="assets/slide1.svg" alt="Logo 5" />
+        <img src="assets/slide2.svg" alt="Logo 6" />
+        <img src="assets/slide3.svg" alt="Logo 7" />
+        <img src="assets/slide4.svg" alt="Logo 8" />
       </div>
-      <div class="logo-set">
-        <img src="assets\slide3.svg" alt="Logo 5" />
-        <img src="assets\slide4.svg" alt="Logo 6" />
-        <img src="assets\slide2.svg" alt="Logo 7" />
-        <img src="assets\slide1.svg" alt="Logo 8" />
+       
+      <div class="powers-logo-set">
+        <img src="assets/slide1.svg" alt="Logo 5" />
+        <img src="assets/slide2.svg" alt="Logo 6" />
+        <img src="assets/slide3.svg" alt="Logo 7" />
+        <img src="assets/slide4.svg" alt="Logo 8" />
       </div>
     </div>
 
-    <div class="dots" id="carousel-dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
+    <div class="powers-dots">
+      <span class="powers-dot active" data-index="0"></span>
+      <span class="powers-dot" data-index="1"></span>
+      <span class="powers-dot" data-index="2"></span>
     </div>
   </div>
 </section>
@@ -559,15 +567,7 @@
   </div>
 </footer>
 
-<!-- ✅ JavaScript Toggle Logic -->
-<script>
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
 
-  menuToggle.addEventListener("click", function () {
-    mobileMenu.classList.toggle("d-none");
-  });
-</script>
 <script src="script.js"></script>
 </body>
 </html>

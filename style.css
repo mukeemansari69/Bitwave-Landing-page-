@@ -193,75 +193,98 @@ color: #FFFFFF;
 }
 
 /*#################################################################################################   our solution seaction     */
-.our-solution-section {
-  background-color: #040226;
-  padding: 79px 0 109px 0px;
+ 
+.powers-section {
+  background: #040226;
+  padding: 79px 0 109px 0;
+  color: #fff;
+  width: 100%;
 }
 
-.solution-inner {
+.powers-container {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  padding: 0 20px;
 }
 
-.solution-heading {
-  font-family: 'Poppins', sans-serif;
+.powers-heading {
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 35px;
   line-height: 100%;
-  color: #ffffff;
-  max-width: 634px;
-  margin: 0 auto 52px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.logos-wrapper {
+.powers-logos-wrapper {
   position: relative;
   overflow: hidden;
-  height: auto;
+  width: 100%;
 }
 
-.logo-set {
+.powers-logo-set {
   display: none;
-  justify-content: center;
-  gap: 125px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
-.logo-set.active {
+.powers-logo-set.active {
   display: flex;
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.logo-set img {
- 
+.powers-logo-set img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
   object-fit: contain;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.dots {
-  margin-top: 40px;
+.powers-dots {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  margin-top: 40px;
+  gap: 16px;
 }
 
-.dot {
+.powers-dot {
   width: 11px;
   height: 11px;
+  background: #ffffff50;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
-.dot.active {
-  background-color: #ffffff;
+.powers-dot.active {
+  background: #ffffff;
 }
-/*#########################################################################      Event seaction  */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .powers-logo-set {
+    gap: 20px;
+  }
+
+  .powers-logo-set img {
+    max-width: 45%;
+  }
+}
+ 
+ 
+ 
+ /*#########################################################################      Event seaction  */
 
 .event-section {
   background-color: #020b12;
@@ -1167,6 +1190,8 @@ color: #FFFFFF;
 .our-technology-card:nth-child(8) .our-technology-card-title { color: #DA2B20; }
 .our-technology-card:nth-child(9) .our-technology-card-title { color: #1EAAF9; }
 
+
+
 @media (max-width: 768px) {
   .our-technology-heading {
     font-size: 48px;
@@ -1499,8 +1524,11 @@ color: #FFFFFF;
   height: auto;
   object-fit: cover;
   position:absolute;
+  overflow: hidden;
 }
+@media (max-width: 1038px) and (min-width: 769px){
 
+}
 /* Responsive */
 @media (max-width: 1024px) {
   .keep-section-container {
@@ -1821,14 +1849,30 @@ padding:  28px 78px 28.9px 106px;
   }
 
   /* Images: all images max-width 100% */
-  img, .banner-section img, .event-image img, .revolutionize-images img, .card-icon, .hi-section-image, .imagine-section-image, .bitwavemedia-image, .portal-image, .keep-section-image {
-    max-width: 100% !important;
-    height: auto !important;
+  img, .banner-section img, .event-image img, .revolutionize-images img, .card-icon, .hi-section-image,  .bitwavemedia-image, .keep-section-image {
+    max-width: 100% ;
+    height: auto ;
   }
+   .hi-section-image{
+    max-height: 440px;
+   }
+   .imagine-section-image{
+    max-height: 440px;
+   }
+   .portal-image{
+    max-height: 440px;
+   }
  .bring-icon{
   width: 70px;
   height: auto !important;
  }
+
+.powers-section{
+  padding: 40px 0px 40px 0;
+  margin-bottom: 40px;
+}
+
+
   /* Our Solution Section */
   .our-solution-section {
     padding: 30px 0 40px 0;
@@ -1909,9 +1953,9 @@ padding:  28px 78px 28.9px 106px;
 
   /* Cards Section */
   .cards {
-    flex-direction: column;
+    
     gap: 18px;
-    margin: 10px 50px 10px 50px;
+    margin: 30px 50px 30px 50px;
   }
   .card {
     padding: 20px 10px 30px 10px;
@@ -1939,7 +1983,7 @@ padding:  28px 78px 28.9px 106px;
     padding: 10px;
   }
   .get-right {
-    margin-top: 30px;
+    margin-top: -30px;
   }
   .get-title {
     font-size: 1.1rem;
@@ -2007,7 +2051,7 @@ padding:  28px 78px 28.9px 106px;
     margin-bottom: 30px;
   }
   .imagine-section-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
     gap: 10px;
     padding: 0 5px;
@@ -2018,11 +2062,12 @@ padding:  28px 78px 28.9px 106px;
     max-width: 100%;
   }
   .imagine-section-heading {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+    font-size: 36px;
+    line-height: 38px;
+    margin-bottom: 26px;
   }
   .imagine-section-highlight {
-    font-size: 1.7rem;
+    font-size: 42px;
     line-height: 1.2rem;
     margin-bottom: 20px;
   }
@@ -2031,7 +2076,7 @@ padding:  28px 78px 28.9px 106px;
   }
   .imagine-section-button {
     font-size: 1rem;
-    padding: 8px 16px;
+    padding: 8px 76px;
     max-width: 100%;
   }
 
@@ -2040,9 +2085,9 @@ padding:  28px 78px 28.9px 106px;
     padding: 30px 0 30px 0;
   }
   .bitwavemedia-heading {
-    font-size: 2rem;
-    line-height: 2.2rem;
-    width: 100%;
+    font-size: 43px;
+        line-height: 50px;
+        width: 100%;;
   }
   .bitwavemedia-description {
     font-size: 1rem;
@@ -2070,12 +2115,12 @@ padding:  28px 78px 28.9px 106px;
     margin-bottom: 30px;
   }
   .our-technology-heading {
-    font-size: 1.5rem;
-    line-height: 1.7rem;
-    margin-bottom: 30px;
+   font-size: 43px;
+        line-height: 48px;
+        margin-bottom: 30px;
   }
   .our-technology-grid {
-    gap: 20px 10px;
+    gap: 60px 20px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -2133,17 +2178,18 @@ padding:  28px 78px 28.9px 106px;
     padding-top: 30px;
   }
   .bring-heading {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+    font-size: 43px;
+    line-height: 47px;
     margin-bottom: 20px;
   }
   .bring-top-cards, .bring-bottom-row {
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 50px;
+    margin-bottom: 30px;
   }
   .bring-card, .bring-bottom-card {
-    max-width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     text-align: center;
   }
   .bring-card-title, .bring-bottom-title {
@@ -2167,10 +2213,11 @@ padding:  28px 78px 28.9px 106px;
 
   /* Keep Section */
   .keep-section {
-    padding: 20px 0 20px;
+    padding: 0;
   }
   .keep-section-container {
-    flex-direction: column-reverse;
+    display: none;
+    flex-direction: column;
     text-align: center;
     gap: 10px;
     padding: 0 5px;
@@ -2215,16 +2262,16 @@ padding:  28px 78px 28.9px 106px;
     gap: 10px;
   }
   .email-input-wrapper {
-    padding: 10px 10px 10px 10px;
+    padding: 10px 50px 10px 50px;
     border-radius: 6px;
   }
   .email-input {
     font-size: 1rem;
   }
   .subscribe-button {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 10px;
+   max-width: 313px;
+   margin: 0 auto;
+    
     font-size: 1rem;
     padding: 10px 0;
     border-radius: 6px;
@@ -2249,17 +2296,23 @@ padding:  28px 78px 28.9px 106px;
     width: 22px;
     height: 22px;
   }
+  .phone-img{
+    max-height: 440px;
+    margin: 0 auto;
+  }
 }
 
 
 /* ################################################################################################   css ############################ */
-
-/* Hide desktop menu, show toggle on mobile */
-@media (max-width: 769px) {
+.menu-toggle{
+  display: none;
+}
+@media (max-width: 768px) {
   .menu-toggle {
     background: none;
     border: none;
     z-index: 20;
+    display: block !important;
   }
 
   .menu-toggle img {
@@ -2280,6 +2333,7 @@ padding:  28px 78px 28.9px 106px;
     z-index: 10;
     width: 100%;
     max-width: 100%;
+    
   }
 
   .mobile-menu a {
@@ -2287,5 +2341,31 @@ padding:  28px 78px 28.9px 106px;
     margin: 8px 0;
     text-decoration: none;
     font-weight: 500;
+  }
+}
+@media (max-width: 480px) {
+  .cards {
+    
+    gap: 18px;
+    margin: 10px 50px;
+  }
+  .explore-btn2{
+    max-width: 140px;
+  }
+  .hi-section{
+    padding: 0px 0 30px;
+        margin-top: -50px;
+  }
+  .hi-section-left{
+    margin-top: -70px;
+  }
+  .our-technology-heading{
+    font-size: 32px;
+  }
+  .bring-heading{
+    font-size: 32px;
+  }
+  .footer-section{
+    padding: 0;
   }
 }

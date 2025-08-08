@@ -1,3 +1,15 @@
+/* toggle functionality on mobile screen  */
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle.addEventListener("click", function () {
+    mobileMenu.classList.toggle("d-none");
+  });
+
+
+
+
 /* Type Writer Effetct */
 
   const words = ["Internet Reality", "Digital World", "Smart Future", "Virtual Life", "Connected Age"];
@@ -135,18 +147,10 @@
 
 
   
-
-/* logo carousel */
-
-  const logoSets = document.querySelectorAll(".logo-set");
-  const dots = document.querySelectorAll(".dot");
-  const heading = document.getElementById("solution-heading");
-
-  const headings = [
-    "Our Solution Powers Leading Venues",
-    "Trusted by Global Innovators",
-    "Empowering Next-Gen Connectivity"
-  ];
+/* logo crausal in functinality  */
+  const logoSets = document.querySelectorAll(".powers-logo-set");
+  const dots = document.querySelectorAll(".powers-dot");
+  const wrapper = document.getElementById("powers-logos-wrapper");
 
   let currentIndex = 0;
 
@@ -157,31 +161,21 @@
       set.classList.toggle("active", i === index);
     });
 
-    dots.forEach(dot => {
-      dot.classList.remove("active");
-    });
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[index]) dots[index].classList.add("active");
 
-    if (dots[index]) {
-      dots[index].classList.add("active");
-    }
-
-    heading.textContent = headings[index];
     currentIndex = index;
   }
 
   dots.forEach(dot => {
     dot.addEventListener("click", () => {
       const index = parseInt(dot.dataset.index);
-      if (!isNaN(index)) {
-        showSlide(index);
-      }
+      if (!isNaN(index)) showSlide(index);
     });
   });
 
-  // Swipe support
+  // Swipe Support
   let startX = 0;
-  const wrapper = document.getElementById("logos-wrapper");
-
   wrapper.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
   });
@@ -189,13 +183,20 @@
   wrapper.addEventListener("touchend", (e) => {
     const endX = e.changedTouches[0].clientX;
     if (startX - endX > 50) {
-      // Swipe left → next
       const nextIndex = (currentIndex + 1) % logoSets.length;
       showSlide(nextIndex);
     } else if (endX - startX > 50) {
-      // Swipe right → previous
       const prevIndex = (currentIndex - 1 + logoSets.length) % logoSets.length;
       showSlide(prevIndex);
     }
   });
+
+  // Auto Slide
+  setInterval(() => {
+    const nextIndex = (currentIndex + 1) % logoSets.length;
+    showSlide(nextIndex);
+  }, 8000);
+
+  // Initialize first slide
+  showSlide(0);
 
