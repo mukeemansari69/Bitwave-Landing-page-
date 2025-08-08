@@ -76,6 +76,7 @@ body, html {
   gap: 3rem;
   margin: 0;
   padding: 0;
+  max-width: 815px;
 }
 
 .nav-menu li a {
@@ -135,7 +136,9 @@ letter-spacing: 0.05em;
 color:#FFFFFF ;
 
 }
-
+.nav-logo img{
+  max-width: 100%;
+}
 .main-highlight {
   font-family: Poppins;
 font-weight: 700;
@@ -157,7 +160,12 @@ color: #FFFFFF;
  margin-top: 44px;
   
 }
-
+@media (max-width: 998px){
+  
+  .nav-menu {
+    display: none;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .main-highlight {
@@ -172,9 +180,6 @@ color: #FFFFFF;
     font-size: 1rem;
   }
 
-  .nav-menu {
-    display: none;
-  }
 
   .explore-btn {
     font-size: 0.9rem;
@@ -192,97 +197,110 @@ color: #FFFFFF;
   50% { opacity: 0; }
 }
 
-/*#################################################################################################   our solution seaction     */
- 
-.powers-section {
-  background: #040226;
-  padding: 79px 0 109px 0;
+.mobile-menu {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mobile-menu a {
   color: #fff;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 15px 0;
+  margin: 0;
+}
+
+
+/*#################################################################################################   our solution seaction     */
+ .our-power-section {
   width: 100%;
-}
-
-.powers-container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  background-color: #040226; /* same dark bg */
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
 }
 
-.powers-heading {
-  font-family: "Poppins", sans-serif;
+.our-power-container {
+  position: relative;
+  padding-top: 79px; /* heading top padding */
+  text-align: center;
+}
+
+.our-power-heading {
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 35px;
   line-height: 100%;
-  text-align: center;
-  margin-bottom: 50px;
+  color: #FFFFFF;
+  margin: 0;
+  padding-bottom: 52px; /* spacing below heading */
 }
 
-.powers-logos-wrapper {
+.our-power-marquee {
   position: relative;
   overflow: hidden;
   width: 100%;
+  white-space: nowrap;
 }
 
-.powers-logo-set {
-  display: none;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+.our-power-track {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+  gap: 125px; /* gap between logos */
+  padding-bottom: 71px;
 }
 
-.powers-logo-set.active {
-  display: flex;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.powers-logo-set img {
-  max-width: 100%;
+.our-power-track img {
   height: auto;
-  max-height: 100px;
-  object-fit: contain;
+  width: auto;
+  max-height: 80px;
 }
 
-.powers-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  gap: 16px;
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.powers-dot {
-  width: 11px;
-  height: 11px;
-  background: #ffffff50;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.powers-dot.active {
-  background: #ffffff;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .powers-logo-set {
-    gap: 20px;
+  .our-power-heading {
+    font-size: 28px;
+    padding-bottom: 50px;
   }
-
-  .powers-logo-set img {
-    max-width: 45%;
+  .our-power-track img {
+    max-height: 60px;
   }
 }
- 
- 
+
+@media (max-width: 480px) {
+  .our-power-heading {
+    font-size: 22px;
+    padding-bottom: 40px;
+    max-width: 310px;
+    margin: 0 auto;
+  }
+  .our-power-container{
+    padding-top: 30px;
+  }
+  .our-power-track{
+    padding-bottom: 30px;
+    gap: 60px;
+  }
+  .our-power-track img {
+    max-height: 50px;
+  }
+}
+
  
  /*#########################################################################      Event seaction  */
 
@@ -1526,8 +1544,11 @@ color: #FFFFFF;
   position:absolute;
   overflow: hidden;
 }
-@media (max-width: 1038px) and (min-width: 769px){
-
+@media (max-width: 1076px) and (min-width: 769px){
+ .top-nav{
+      padding-left: 20px;
+    padding-right: 20px;
+ }
 }
 /* Responsive */
 @media (max-width: 1024px) {
@@ -1808,7 +1829,7 @@ padding:  28px 78px 28.9px 106px;
   /* Banner Section */
   .banner-section {
     background-position: center top;
-    padding: 0 10px;
+    padding: 0 20px;
   }
   .top-nav {
     padding: 18px 10px;
@@ -1925,7 +1946,7 @@ padding:  28px 78px 28.9px 106px;
 
   /* Revolutionize Section */
   .revolutionize {
-    padding-top: 30px;
+    padding: 30px 20px 0px 20px;
   }
   .revolutionize-heading {
     font-size: 2rem;
@@ -1977,7 +1998,7 @@ padding:  28px 78px 28.9px 106px;
   .get-section-container {
     flex-direction: column;
     gap: 10px;
-    padding: 0;
+    padding: 0 20px;
   }
   .get-left, .get-right {
     padding: 10px;
@@ -2108,7 +2129,9 @@ padding:  28px 78px 28.9px 106px;
     font-size: 1rem;
     padding: 8px 16px;
   }
-
+.nav-right{
+  gap: 18px;
+}
   /* Our Technology Section */
   .our-technology-section {
     margin-top: 30px;
@@ -2307,14 +2330,17 @@ padding:  28px 78px 28.9px 106px;
 .menu-toggle{
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 998px) {
   .menu-toggle {
     background: none;
     border: none;
-    z-index: 20;
+    z-index: 9999 ;
     display: block !important;
+    position: relative;
   }
-
+.nav-right{
+  gap: 18px;
+}
   .menu-toggle img {
     width: 28px;
     height: 28px;
@@ -2327,9 +2353,7 @@ padding:  28px 78px 28.9px 106px;
     top: 100%;
     right: 0;
     background-color: #191919;
-    border: 1px solid #333;
     border-radius: 12px;
-    padding: 16px;
     z-index: 10;
     width: 100%;
     max-width: 100%;
@@ -2347,7 +2371,7 @@ padding:  28px 78px 28.9px 106px;
   .cards {
     
     gap: 18px;
-    margin: 10px 50px;
+    margin: 10px 20px;
   }
   .explore-btn2{
     max-width: 140px;
@@ -2368,4 +2392,16 @@ padding:  28px 78px 28.9px 106px;
   .footer-section{
     padding: 0;
   }
+      /* .bring-card, .bring-bottom-card {
+        max-width: 230px;
+      } */
+
+      .hi-section-button{
+        max-width: 250px;
+        width: 100%;
+      }
+      .imagine-section-button{
+        max-width: 250px;
+        width: 100%;
+      }
 }

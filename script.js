@@ -4,8 +4,23 @@
   const mobileMenu = document.getElementById("mobileMenu");
 
   menuToggle.addEventListener("click", function () {
-    mobileMenu.classList.toggle("d-none");
+    if (mobileMenu.style.height && mobileMenu.style.height !== "0px") {
+      // Close the menu smoothly
+      mobileMenu.style.height = "0";
+    } else {
+      // Open the menu smoothly
+      const scrollHeight = mobileMenu.scrollHeight;
+      mobileMenu.style.height = scrollHeight + "px";
+    }
   });
+
+  // Optional: Close menu on window resize to desktop
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 998) {
+      mobileMenu.style.height = "0";
+    }
+  });
+
 
 
 
@@ -148,55 +163,4 @@
 
   
 /* logo crausal in functinality  */
-  const logoSets = document.querySelectorAll(".powers-logo-set");
-  const dots = document.querySelectorAll(".powers-dot");
-  const wrapper = document.getElementById("powers-logos-wrapper");
-
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    if (index < 0 || index >= logoSets.length) return;
-
-    logoSets.forEach((set, i) => {
-      set.classList.toggle("active", i === index);
-    });
-
-    dots.forEach(dot => dot.classList.remove("active"));
-    if (dots[index]) dots[index].classList.add("active");
-
-    currentIndex = index;
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      const index = parseInt(dot.dataset.index);
-      if (!isNaN(index)) showSlide(index);
-    });
-  });
-
-  // Swipe Support
-  let startX = 0;
-  wrapper.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  wrapper.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-      const nextIndex = (currentIndex + 1) % logoSets.length;
-      showSlide(nextIndex);
-    } else if (endX - startX > 50) {
-      const prevIndex = (currentIndex - 1 + logoSets.length) % logoSets.length;
-      showSlide(prevIndex);
-    }
-  });
-
-  // Auto Slide
-  setInterval(() => {
-    const nextIndex = (currentIndex + 1) % logoSets.length;
-    showSlide(nextIndex);
-  }, 8000);
-
-  // Initialize first slide
-  showSlide(0);
-
+ 
