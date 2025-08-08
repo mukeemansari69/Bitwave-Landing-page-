@@ -160,6 +160,11 @@ color: #FFFFFF;
  margin-top: 44px;
   
 }
+@media (min-width: 1367px){
+  .banner-section{
+  background-position: 100% 35%;
+  }
+}
 @media (max-width: 998px){
   
   .nav-menu {
@@ -1485,11 +1490,10 @@ color: #FFFFFF;
 }
 
 .keep-section-left {
+  position: absolute;
   color: #ffffff;
-  margin-left: 104px;
-  flex: 1 1 500px;
-  position: relative;
-  z-index: 1;
+  margin-left: 101px;
+  z-index: 10;
 }
 
 .keep-section-top-text {
@@ -1542,14 +1546,13 @@ color: #FFFFFF;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 1;
 }
 
 .keep-section-image {
-  
+  width: 100%;
+  max-width: 1041px;
   height: auto;
-  object-fit: cover;
-  position:absolute;
-  overflow: hidden;
 }
 @media (max-width: 1076px) and (min-width: 769px){
  .top-nav{
@@ -1566,7 +1569,8 @@ color: #FFFFFF;
 
   .keep-section-left {
     margin-left: 0;
-    padding: 0 20px;
+    padding: 0;
+    position: static;
   }
 
   .keep-section-right {
@@ -1673,9 +1677,9 @@ color: #FFFFFF;
   align-items: center;
   border: 1px solid #fff;
   border-radius: 10px;
-  padding: 29px 432px 36px 26px;
+  padding: 25px 7px 25px 25px;
   background: transparent;
-  min-width: 0;
+  
 }
 
 .mail-icon {
@@ -1708,7 +1712,7 @@ color: #FFFFFF;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.05em;
-  padding:28px 58px;      /* 29px 432px 31px 26px; */
+  padding:16px 58px;      /* 29px 432px 31px 26px; */
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -1826,12 +1830,11 @@ padding:  28px 78px 28.9px 106px;
 */
 
 @media (max-width: 780px) {
-  /* General font size reduction */
   body, html {
     font-size: 14px;
   }
   .email-subscribe-banner{
-    font-size: 16px;
+    font-size: 12px;
   }
   /* Banner Section */
   .banner-section {
@@ -2132,6 +2135,10 @@ padding:  28px 78px 28.9px 106px;
     font-size: 1rem;
     line-height: 1.3rem;
     margin: 20px auto 30px;
+    padding: 0 20px;
+  }
+  .bitwavemedia-description br {
+    display: none;
   }
   .bitwavemedia-imageblock {
     text-align: center;
@@ -2142,6 +2149,7 @@ padding:  28px 78px 28.9px 106px;
   .bitwavemedia-footnote {
     font-size: 1rem;
     margin-bottom: 20px;
+    padding: 0 20px;
   }
   .bitwavemedia-button {
     font-size: 1rem;
@@ -2164,14 +2172,15 @@ padding:  28px 78px 28.9px 106px;
     gap: 60px 20px;
     margin-left: 0;
     margin-right: 0;
+    grid-template-columns: repeat(2, 1fr);
   }
   .our-technology-card {
-    
+    width: 100%;
     height: auto;
     margin: 0 auto;
   }
   .our-technology-card-title {
-    font-size: 1.1rem;
+    font-size: 16px;
     line-height: 1.3rem;
     height: auto;
   }
@@ -2304,7 +2313,7 @@ padding:  28px 78px 28.9px 106px;
   }
   .email-input-wrapper {
     padding: 10px 50px 10px 50px;
-    border-radius: 6px;
+    max-width: 313px;
   }
   .email-input {
     font-size: 1rem;
@@ -2315,7 +2324,6 @@ padding:  28px 78px 28.9px 106px;
     
     font-size: 1rem;
     padding: 10px 0;
-    border-radius: 6px;
   }
   .footer-bottom {
     flex-direction: column;
@@ -2378,8 +2386,9 @@ padding:  28px 78px 28.9px 106px;
     max-width: 100%;
     opacity: 0;
     visibility: hidden;
-    height: 0;
-    transition: all 0.8s ease;
+    max-height: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -2388,7 +2397,8 @@ padding:  28px 78px 28.9px 106px;
   .mobile-menu.active {
     opacity: 1;
     visibility: visible;
-    height: auto;
+    max-height: 400px;
+    transform: translateY(0);
     padding: 20px 0;
   }
 
@@ -2446,5 +2456,24 @@ padding:  28px 78px 28.9px 106px;
       .imagine-section-button{
         max-width: 250px;
         width: 100%;
+      }
+      .our-technology-grid{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .our-technology-icon{
+        max-width: 40px;
+        width: 100%;
+        margin-bottom: 10px;
+        max-height: 40px;
+      }
+      .email-input-wrapper{
+        max-width: 313px;
+      }
+      .get-left, .get-right{
+        padding: 0px;
+      }
+      .get-character{
+        right: 0;
       }
 }
