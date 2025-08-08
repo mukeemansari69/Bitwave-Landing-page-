@@ -4,20 +4,13 @@
   const mobileMenu = document.getElementById("mobileMenu");
 
   menuToggle.addEventListener("click", function () {
-    if (mobileMenu.style.height && mobileMenu.style.height !== "0px") {
-      // Close the menu smoothly
-      mobileMenu.style.height = "0";
-    } else {
-      // Open the menu smoothly
-      const scrollHeight = mobileMenu.scrollHeight;
-      mobileMenu.style.height = scrollHeight + "px";
-    }
+    mobileMenu.classList.toggle("active");
   });
 
   // Optional: Close menu on window resize to desktop
   window.addEventListener("resize", function () {
     if (window.innerWidth > 998) {
-      mobileMenu.style.height = "0";
+      mobileMenu.classList.remove("active");
     }
   });
 
