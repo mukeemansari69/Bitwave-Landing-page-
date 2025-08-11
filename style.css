@@ -39,20 +39,19 @@ body, html {
 /* ###################################################################################  banner seacrtion ############################################################ */
 .banner-section {
   position: relative;
-  background-color: #030303;
-  background-image: url('assets/Mask Group.svg');  /* 👈 your combined image */
+  background-color: #020B12;
+  background-image: url('assets/Mask Group.svg');
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;  /* or use contain if it’s a strict size image */
+  background-position: top center;
+  background-size: cover;
   box-shadow: 0px 4px 4px 0px #00000040;
-  /* overflow: hidden; */
   z-index: 0;
 }
 
 /* Nav */
 
 .top-nav {
-  padding: 40px 64px;
+  padding: 40px 0; /* vertical only; horizontal comes from .container */
   position: relative;
   z-index: 2;
   width: 100%;
@@ -99,10 +98,25 @@ text-decoration: none;
   align-items: center;
 }
 .container {
-  padding-bottom: 113px !important;
-  padding-left: 0px !important;
-  padding-top: 104px !important;
-} 
+  max-width: 1366px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* Avoid Bootstrap .container overrides by using a custom container */
+.bw-container {
+  max-width: 1366px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
 
 
 /* Content */
@@ -115,7 +129,7 @@ text-decoration: none;
   padding-bottom: 213px;
 }
 .top-nav{
-    padding: 40px 64px;
+    padding: 40px 0;
 }
 .strip-text {
  font-family: Poppins;
@@ -162,7 +176,10 @@ color: #FFFFFF;
 }
 @media (min-width: 1367px){
   .banner-section{
-  background-position: 100% 35%;
+    background-color: #020B12; /* side fill color on large screens */
+    background-size: 1366px auto; /* keep BG image same width as 1366 */
+    background-position: top center; /* center the image */
+    background-repeat: no-repeat;
   }
 }
 @media (max-width: 998px){
@@ -741,6 +758,16 @@ color: #FFFFFF;
   transform:rotate(7.92deg);
 }
 
+/* Keep wifi icons aligned to the 1366px content container on large screens */
+@media (min-width: 1367px) {
+  .wifi-top-left {
+    left: calc((100vw - 1366px) / 2 + -34px);
+  }
+  .wifi-top-right {
+    right: calc((100vw - 1366px) / 2 + 50px);
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .get-title, .get-subtitle, .get-suddenly, .get-choose, .get-not-anymore {
@@ -1046,8 +1073,10 @@ color: #FFFFFF;
 }
 
 .bitwavemedia-container {
-  
+  max-width: 1366px;
   margin: 0 auto;
+  /* padding-left: 24px;
+  padding-right: 24px; */
 }
 
 .bitwavemedia-textblock {
@@ -2481,10 +2510,19 @@ padding:  28px 78px 28.9px 106px;
         padding: 0px;
       }
       .get-character{
-        right: 0;
+        right: -11px;
       }
       .keep-section-right.animate{
         margin-top: -80px;
         margin-bottom: -70px;
       }
+      
+}
+
+/* Keep cards layout identical to 1366px on larger screens */
+@media (min-width: 1366px) {
+  .cards {
+    width: 1310px; /* 1366 - (26 + 30) based on existing margins at 1366 */
+    margin: 157px auto 164px auto; /* preserve top/bottom spacing, center horizontally */
+  }
 }
