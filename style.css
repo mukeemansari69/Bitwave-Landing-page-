@@ -1448,7 +1448,7 @@ color: #FFFFFF;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  margin-bottom: 110px;
+  margin-bottom: 137px;
 }
 .bring-top-cards .bring-card:nth-child(1) .bring-card-title {
   color: #FF277A; /* Pink for 1st card */
@@ -1475,7 +1475,7 @@ color: #FFFFFF;
 /* ############################################################################################# Keep Seaction ######################################################################### */
 .keep-section {
   
-  padding: 76px 0 118px;
+ /*  padding: 76px 0 118px; */
   font-family: 'Poppins', sans-serif;
   color: white;
 }
@@ -1641,7 +1641,7 @@ color: #FFFFFF;
   color: #fff;
   padding: 66px 0px 0 0px;
   font-family: 'Poppins', sans-serif;
-  margin-top: 80px;
+ /*  margin-top: 80px; */
 }
 
 .subscribe-wrapper {
@@ -1927,7 +1927,7 @@ padding:  28px 78px 28.9px 106px;
 
   /* Event Section */
   .event-section {
-    margin: 20px 0 30px 0;
+    margin: 20px 0 20px 0;
   }
   .event-container {
     flex-direction: column;
@@ -1969,7 +1969,7 @@ padding:  28px 78px 28.9px 106px;
 
   /* Revolutionize Section */
   .revolutionize {
-    padding: 30px 20px 0px 20px;
+    padding: 20px 20px 0px 20px;
   }
   .revolutionize-heading {
     font-size: 2rem;
@@ -2016,7 +2016,7 @@ padding:  28px 78px 28.9px 106px;
 
   /* Get Ready Section */
   .get-section {
-    padding: 10px 5px 0 5px;
+    padding: 20px 5px 0 5px;
   }
   .get-section-container {
     flex-direction: column;
@@ -2431,13 +2431,13 @@ padding:  28px 78px 28.9px 106px;
   .cards {
     
     gap: 18px;
-    margin: 10px 20px;
+    margin: 20px 20px;
   }
   .explore-btn2{
     max-width: 140px;
   }
   .hi-section{
-    padding: 0px 0 30px;
+    padding: 0px 0 20px;
         margin-top: -50px;
   }
   .hi-section-left{
